@@ -1,0 +1,29 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# configuration for the python-olsrd scripts
+
+config = dict (
+    jsoninfo = dict(
+        host = "127.0.0.1",
+        port = 9090
+    ),
+    stats = dict (
+        outputPath = "/var/www/stats/",
+    ),
+    ffapi = dict (
+        apiFile = "/var/www/ffapi/ffapi.json"
+    ),
+    nameservice = dict (
+        servicesFile = "/var/run/services_olsr",
+        hostsFile = "/etc/hosts.olsr"
+    ),
+    dotdraw = dict(
+        host = "127.0.0.1",
+        port = 2004
+    ),
+    topo3 = dict (
+        outputPath = "/var/www/topo3",
+        ICVPNHosts = ['10.11.63.121']
+    )   
+)
