@@ -23,7 +23,7 @@ config = dict (
         port = 2004
     ),
     topo3 = dict (
-        outputPath = "/var/www/topo3",
+        outputPath = "/var/www/TOPO3",
         ICVPNHosts = ['10.11.63.121']
     )   
 )
