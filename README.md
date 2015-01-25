@@ -14,7 +14,7 @@ Reads olsrd_jsoninfo output and writes some basic statistics in json format cont
 Updates a [ffapi](https://github.com/freifunk/api.freifunk.net) file with current number of nodes. Also updates the list of services available in the mesh.
 
 ### topo3-json
-Creates json output to be used with TOPO3.
+Creates json output to be used with [TOPO3](https://github.com/mmunz/TOPO3).
 
 ## Libs
 
