@@ -33,7 +33,7 @@ def renderDotPlain(dotRaw):
     ret = G.draw(format='plain')
     return ret
 
-def parseDot(dotRaw, hostsFile=None):
+def parseDot(dotRaw, hostsFile=None, verifySSL=True):
     """ Parses dotdraw raw output into a list of dicts
         Args:
             dotRaw    -- dotRaw input (string)
@@ -94,7 +94,7 @@ def parseDot(dotRaw, hostsFile=None):
     """
     hosts = None
     if hostsFile:
-        hosts = readHostsFile(hostsFile)
+        hosts = readHostsFile(hostsFile, verifySSL)
         
     out = {
         "nodes": [],
@@ -186,6 +186,8 @@ def getDot(host, port):
         buffer = s.recv(4096)
         while buffer:
             response += buffer
+            if "}" in response:
+                break
             buffer = s.recv(4096)
             
     except socket.error, e:

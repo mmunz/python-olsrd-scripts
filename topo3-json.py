@@ -26,6 +26,7 @@ workingDir = config["topo3"]["outputPath"]
 dotolsr = workingDir + '/topo-olsr-raw.dot'
 outputFile = workingDir + '/topo3.json'
 hostsFile = config["nameservice"]["hostsFile"]
+nsVerifySSL = config["nameservice"]["verifySSL"]
 # hosts that do peering via IC-VPN. They have a ot of HNAs, so we want to be able
 # to filter these in the graph. Set to False to disable this feature.
 ICVPNHosts = config["topo3"]["ICVPNHosts"]
@@ -98,14 +99,14 @@ def get_metainfo():
 
 def main():
     """ main function: get infos and write them to a file """
-    
+
     status, dotRaw = getDot(dotDrawHost, dotDrawPort)
     if status == False:
         print('Error getting data from olsrd dotdraw plugin.')
         print(dotRaw)
         exit()
         
-    out = parseDot(dotRaw, hostsFile=hostsFile)
+    out = parseDot(dotRaw, hostsFile=hostsFile, verifySSL=nsVerifySSL)
 
     # Mark icvpn targets so we can filter them out in the graph
     if len(ICVPNHosts) > 0:

@@ -9,21 +9,24 @@ config = dict (
         port = 9090
     ),
     stats = dict (
-        outputPath = "/var/www/stats/",
+        outputPath = "/var/www/wgaugsburg.de/stats/",
     ),
     ffapi = dict (
         apiFile = "/var/www/ffapi/ffapi.json"
     ),
     nameservice = dict (
+        # either use a file path or a HTTP/HTTPS URL here
+        # verifySSL is used to enable/disable SSL certificate verification for HTTPS
         servicesFile = "/var/run/services_olsr",
-        hostsFile = "/etc/hosts.olsr"
+        hostsFile = "/etc/hosts.olsr",
+        verifySSL = True
     ),
     dotdraw = dict(
         host = "127.0.0.1",
         port = 2004
     ),
     topo3 = dict (
-        outputPath = "/var/www/TOPO3",
+        outputPath = "/var/www/wgaugsburg.de/TOPO3",
         ICVPNHosts = ['10.11.63.121']
     )   
 )

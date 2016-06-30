@@ -34,6 +34,7 @@ host = config["jsoninfo"]["host"]
 port = config["jsoninfo"]["port"]
 olsrServices = config["nameservice"]["servicesFile"]
 apiFile = config["ffapi"]["apiFile"]
+nsVerifySSL = config["nameservice"]["verifySSL"]
 
 def loadApiFile():
     """ Load an api file into a dictionary """
@@ -85,7 +86,7 @@ def main():
     countNodes = len(uniqueIPs(getTopo(host, port)))
     apiDict = loadApiFile()
     apiDictUpdated = updateApiNodes(apiDict, countNodes)
-    services, errmsg = getServices(olsrServices)
+    services, errmsg = getServices(olsrServices, nsVerifySSL)
     if services:
         apiDictUpdated = updateApiServices(apiDictUpdated, services)
     else:

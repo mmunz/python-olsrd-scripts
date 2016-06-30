@@ -26,6 +26,8 @@ All scripts are configured using config/config.py. You need to create that file 
 
 ## Requires
 - python-pygraphviz
+- python-requests
+- python-urllib3
 
 ## Status
 "Works for me."
