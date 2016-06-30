@@ -24,6 +24,9 @@ The lib/ folder contains various libs for getting info from olsrd plugins.
 
 All scripts are configured using config/config.py. You need to create that file by copying config/config.example.py
 
+## Requires
+- python-pygraphviz
+
 ## Status
 "Works for me."
 
